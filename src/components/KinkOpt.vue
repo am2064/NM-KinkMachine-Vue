@@ -9,13 +9,9 @@ import store from '../store'
 
 export default {
   props: ['kinkId', 'kinkName'],
-  vuex: {
-    getters: {
-      isKink: function () {
-        let _isKink = store.state.kinks.indexOf(this.kinkId) > -1
-        console.log('isKink', _isKink)
-        return _isKink
-      }
+  computed: {
+    isKink: function () {
+      return store.state.kinks.indexOf(this.kinkId) > -1
     }
   },
   methods: {
